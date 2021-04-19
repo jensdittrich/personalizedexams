@@ -1,5 +1,6 @@
 # personalizedexams
 
+This is a small framework explaining how to run python directly from LaTex. We use this to generate personalized exams. See this presentation.
 
 ## compile
 
