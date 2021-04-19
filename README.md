@@ -16,7 +16,7 @@ This is a small framework explaining how to run python directly from LaTex. We u
 ```console
 foo@bar:~$ MATRICULATIONID=132 SEED=12 pdflatex --enable-pipes --shell-escape exam.tex
 ```
-compiles the pdf using SEED as the seed for the pseudo-random engine
+Compiles the pdf using SEED as the seed for the pseudo-random engine: make sure to use a SEED that is a function of the matriculationid, like that the generation process is determinsitic for every student.
 
 ## contributors
 
