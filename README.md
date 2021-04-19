@@ -3,9 +3,11 @@
 This is a small framework explaining how to run python directly from LaTex. We use this to generate personalized exams. See this presentation.
 
 
-Inline-style: 
-![alt text](https://github.com/jensdittrich/personalizedexams/blob/main/process.png "process")
+![alt text](https://github.com/jensdittrich/personalizedexams/blob/main/process1.png "process")
 
+![alt text](https://github.com/jensdittrich/personalizedexams/blob/main/process2.png "process")
+
+![alt text](https://github.com/jensdittrich/personalizedexams/blob/main/process3.png "process")
 
 ## compile
 
