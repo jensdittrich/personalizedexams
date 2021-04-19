@@ -4,7 +4,7 @@ This is a small framework explaining how to run python directly from LaTex. We u
 
 
 Inline-style: 
-![alt text](https://github.com/jensdittrich/personalizedexams/process.png "Logo Title Text 1")
+![alt text](https://github.com/jensdittrich/personalizedexams/blob/main/process.png "process")
 
 
 ## compile
