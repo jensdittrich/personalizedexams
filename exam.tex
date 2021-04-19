@@ -1,0 +1,93 @@
+\documentclass[a4paper,german,oneside]{article}
+\usepackage[margin=2.5cm,bottom=3.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{ifthen}
+\usepackage[hidelinks]{hyperref}
+\usepackage[shortlabels,inline]{enumitem}
+\usepackage[labelfont=bf]{caption}
+\usepackage[normalem]{ulem}
+\usepackage{fancyvrb}
+
+\setlength{\headheight}{12mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\frenchspacing
+\pagestyle{fancy}
+\sloppy
+
+% Exercise command
+\newcommand{\exercise}[1]{\section{#1}}
+
+% Definition of solution environment
+\definecolor{shadecolor}{rgb}{1,.95,.85}
+\definecolor{framecolor}{rgb}{0.6,0.6,0.6}
+
+\newenvironment{solution}[1]
+    {%
+        \ifthenelse{\isundefined{\displaysolutions}}%
+            {\expandafter\comment}%
+            {\def\FrameCommand{\fcolorbox{framecolor}{shadecolor}}\MakeFramed {\FrameRestore} {\large \textbf{Solution:} {\normalsize #1}\\}}%
+    }%
+    {%
+        \ifthenelse{\isundefined{\displaysolutions}}%
+            {\expandafter\endcomment}%
+            {\endMakeFramed}
+    }
+    
+\newenvironment{secretsolution}[1]
+    {%
+        \ifthenelse{\isundefined{\displaysecretsolutions}}%
+            {\expandafter\comment}%
+            {\def\FrameCommand{\fcolorbox{framecolor}{shadecolor}}\MakeFramed {\FrameRestore} {\large \textbf{Lösung:} {\normalsize #1}\\}}%
+    }%
+    {%
+        \ifthenelse{\isundefined{\displaysecretsolutions}}%
+            {\expandafter\endcomment}%
+            {\endMakeFramed}
+    }
+
+\newcommand{\showsolutions}{\newcommand{\displaysolutions}{}}
+
+\newcommand{\solutionpagebreak}
+	{
+		\ifthenelse{\isundefined{\displaysolutions}}%
+            {}%
+            {\pagebreak}%
+	}
+	
+
+\begin{document}
+	
+	% Use this command to show solutions (without secret solutions, i.e. Python tasks).
+	% Without that, the solutions aren't included.
+	\showsolutions
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\textbf{Matriculation number:}~~
+	\input{|"echo $MATRICULATIONID"}
+
+	\textbf{Seed:}~~
+	\input{|"echo $SEED"}
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\exercise{Hello World (X~Points)}
+
+	\begin{small}
+   		\verbatiminput{|"python3 helloworld.py ${SEED} True False"}
+	\end{small}
+
+	\begin{solution}
+	\\	
+   		\verbatiminput{|"python3 helloworld.py ${SEED} False True"}
+	\end{solution}
+	
+\end{document}
